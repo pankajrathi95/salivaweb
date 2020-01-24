@@ -5,6 +5,8 @@ const logOutUser = () => {
   firebase.auth().signOut();
 };
 const LogOut = () => {
-  return <Button onClick={logOutUser} children="Log Out" />;
+  return (
+    <Button onClick={logOutUser} children="Log Out" backgroundColor="red" />
+  );
 };
 export default LogOut;

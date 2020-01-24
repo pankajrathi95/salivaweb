@@ -29,10 +29,21 @@ class Login extends Component {
   render() {
     const { email, password, error } = this.state;
     return (
-      <React.Fragment>
+      <Box
+        sx={{
+          maxWidth: 512,
+          mx: "auto",
+          marginTop: "100px",
+          px: 6
+        }}
+      >
         <Flex>
-          <Box>
-            <Heading>Log In</Heading>
+          <Box
+            sx={{
+              mx: "10px"
+            }}
+          >
+            <Heading fontWeight="700">Log In</Heading>
           </Box>
         </Flex>
         {error ? (
@@ -43,7 +54,7 @@ class Login extends Component {
           </Flex>
         ) : null}
         <Flex>
-          <Box>
+          <Box marginTop="40px">
             <form onSubmit={this.handleSubmit}>
               <Input
                 type="text"
@@ -51,6 +62,7 @@ class Login extends Component {
                 placeholder="Email"
                 value={email}
                 onChange={this.handleInputChange}
+                marginTop="10px"
               />
               <Input
                 type="password"
@@ -58,12 +70,17 @@ class Login extends Component {
                 placeholder="Password"
                 value={password}
                 onChange={this.handleInputChange}
+                marginTop="10px"
               />
-              <Button children="Log In" />
+              <Button
+                children="Log In"
+                marginTop="10px"
+                backgroundColor="red"
+              />
             </form>
           </Box>
         </Flex>
-      </React.Fragment>
+      </Box>
     );
   }
 }
